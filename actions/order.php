@@ -3,13 +3,14 @@ require_once __DIR__ . '/../includes/bootstrap.php';
 require_login();
 $items = $_SESSION['cart'] ?? [];
 if (!$items) redirect('../pages/cart.php?error=empty');
-$name = trim($_POST['customer_name'] ?? ''); $phone = trim($_POST['phone'] ?? ''); $address = trim($_POST['address'] ?? '');
+$name = trim($_POST['customer_name'] ?? ''); $phone = trim($_POST['phone'] ?? ''); $email = trim($_POST['email'] ?? ''); $address = trim($_POST['address'] ?? ''); $payment = $_POST['payment_method'] ?? 'cod';
 if (!$name || !$phone || !$address) redirect('../pages/cart.php?error=required');
 $pdo = db(); $pdo->beginTransaction();
 try {
-    $total = array_sum(array_map(fn($i) => $i['price'] * $i['quantity'], $items));
-    $stmt = $pdo->prepare('INSERT INTO orders (user_id,customer_name,phone,email,address,note,total) VALUES (?,?,?,?,?,?,?)');
-    $u = current_user(); $stmt->execute([$u['id'],$name,$phone,$u['email'],$address,trim($_POST['note'] ?? ''),$total]); $orderId = (int)$pdo->lastInsertId();
+    $subtotal = array_sum(array_map(fn($i) => $i['price'] * $i['quantity'], $items));
+    $total = $subtotal + 15000;
+    $stmt = $pdo->prepare('INSERT INTO orders (user_id,customer_name,phone,email,address,note,payment_method,total) VALUES (?,?,?,?,?,?,?,?)');
+    $u = current_user(); if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $email = $u['email']; if (!in_array($payment, ['cod','banking'], true)) $payment = 'cod'; $stmt->execute([$u['id'],$name,$phone,$email,$address,trim($_POST['note'] ?? ''),$payment,$total]); $orderId = (int)$pdo->lastInsertId();
     $line = $pdo->prepare('INSERT INTO order_items (order_id,product_id,product_name,price,quantity) VALUES (?,?,?,?,?)');
     foreach ($items as $item) {
         $line->execute([$orderId,$item['id'],$item['name'],$item['price'],$item['quantity']]);

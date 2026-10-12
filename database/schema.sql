@@ -39,6 +39,7 @@ CREATE TABLE orders (
   email VARCHAR(150),
   address VARCHAR(255) NOT NULL,
   note VARCHAR(500),
+  payment_method ENUM('cod','banking') NOT NULL DEFAULT 'cod',
   total DECIMAL(12,2) NOT NULL DEFAULT 0,
   status ENUM('pending','confirmed','shipping','completed','cancelled') NOT NULL DEFAULT 'pending',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
