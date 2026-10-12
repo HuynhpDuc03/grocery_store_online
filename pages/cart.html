@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạp Hóa Online - Giỏ Hàng & Thanh Toán</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style-cart.css">
+</head>
+<body>
+
+  <!-- HEADER DÙNG CHUNG -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-flex">
+        <span><i class="fa-solid fa-phone"></i> Hotline: 1900 6868</span>
+        <span>Hệ thống Cửa Hàng Tạp Hóa Online</span>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container header-flex">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon-wrap"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="logo-text">
+            <h2>Tạp Hóa Online</h2>
+            <span>Tiện lợi - Tươi ngon mỗi ngày</span>
+          </div>
+        </a>
+        <div class="search-box">
+          <form><input type="text" placeholder="Tìm kiếm sản phẩm..."><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></form>
+        </div>
+        <div class="header-actions">
+          <div class="action-item"><i class="fa-regular fa-user action-icon"></i> <span>Tài khoản</span></div>
+          <a href="javascript:void(0)" class="action-item" onclick="openMiniCart()">
+            <i class="fa-solid fa-basket-shopping action-icon"></i> 
+            <span>Giỏ hàng (<span id="cart-count">0</span>)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="nav-menu">
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li><a href="sanpham.html">Sản phẩm</a></li>
+          <li><a href="#">Khuyến mãi</a></li>
+          <li class="active"><a href="cart.html">Giỏ hàng & Thanh toán</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container page-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3 class="box-title"><i class="fa-solid fa-list"></i> Danh Mục Hàng Hóa</h3>
+        <ul class="cat-list">
+          <li><a href="#">Rau củ quả tươi</a></li>
+          <li><a href="#">Gia vị & Dầu ăn</a></li>
+          <li><a href="#">Mì gói, Bún miến</a></li>
+          <li><a href="#">Đồ uống & Giải khát</a></li>
+          <li><a href="#">Hóa mỹ phẩm</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- KHU VỰC CHÍNH: GIỎ HÀNG & ĐẶT HÀNG -->
+    <section class="content-area">
+      <h2 class="section-title"><i class="fa-solid fa-cart-shopping"></i> Giỏ Hàng & Thanh Toán</h2>
+
+      <div class="checkout-grid"> 
+        <!-- FORM NHẬP THÔNG TIN GIAO HÀNG & THANH TOÁN -->
+        <div class="checkout-card">
+          <h3 class="card-title"><i class="fa-solid fa-user-gear"></i> Thông tin giao hàng</h3>
+          <form id="checkout-form">
+            <div class="form-group">
+              <label for="fullname">Họ và tên người nhận *</label>
+              <input type="text" id="fullname" placeholder="Tên người nhận" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Số điện thoại *</label>
+                <input type="tel" id="phone" placeholder="Sđt..." required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email...">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Địa chỉ giao hàng tận nơi *</label>
+              <input type="text" id="address" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="note">Ghi chú cho shipper</label>
+              <textarea id="note" rows="2" placeholder="Ví dụ: Giao giờ hành chính, gọi trước khi giao..."></textarea>
+            </div>
+
+            <h3 class="card-title" style="margin-top:20px;"><i class="fa-solid fa-wallet"></i> Phương thức thanh toán</h3>
+            <div class="payment-methods">
+              <label class="payment-option">
+                <input type="radio" name="payment" value="cod" checked>
+                <span><i class="fa-solid fa-truck-fast"></i> Thanh toán khi nhận hàng (COD)</span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="payment" value="banking">
+                <span><i class="fa-solid fa-qrcode"></i> Chuyển khoản qua Mã QR / Ngân hàng</span>
+              </label>
+            </div>
+
+            <!-- MÃ GIẢM GIÁ -->
+            <div class="coupon-box" style="margin-top: 20px;">
+              <label style="font-size: 13px; font-weight: bold; margin-bottom: 6px; display: block; color: #333;">
+                <i class="fa-solid fa-ticket" style="color: #278d46;"></i> Mã giảm giá / Ưu đãi
+              </label>
+              <div class="coupon-input-group">
+                <input type="text" id="coupon-code" placeholder="Nhập mã giảm giá..." style="text-transform: uppercase;">
+                <button type="button" id="btn-apply-coupon">Áp dụng</button>
+              </div>
+              <p id="coupon-message" class="coupon-message"></p>
+            </div>
+
+            <button type="submit" class="btn-checkout"><i class="fa-solid fa-paper-plane"></i> ĐẶT HÀNG NGAY</button>
+          </form>
+        </div>
+
+        <!--CHI TIẾT SẢN PHẨM TRONG GIỎ & BẢNG TÍNH TIỀN -->
+        <div class="checkout-card">
+          <h3 class="card-title"><i class="fa-solid fa-list-check"></i> Đơn hàng của bạn</h3>
+          
+          <div id="cart-items" class="cart-items-container">
+            <!-- JS tự động chèn sản phẩm -->
+          </div>
+
+          <div class="order-summary">
+            <div class="summary-line">
+              <span>Tạm tính:</span>
+              <span id="subtotal">0 đ</span>
+            </div>
+            <div class="summary-line">
+              <span>Phí giao hàng:</span>
+              <span id="shipping">15.000 đ</span>
+            </div>
+
+            <!-- HIỂN THỊ SỐ TIỀN GIẢM GIÁ -->
+            <div class="summary-line discount-line" id="discount-row" style="display: none;">
+              <span>Giảm giá (<span id="applied-coupon-code"></span>):</span>
+              <span id="discount-amount" class="discount-price">-0 đ</span>
+            </div>
+
+            <div class="summary-line total-line">
+              <span>Tổng thanh toán:</span>
+              <span id="total-price">0 đ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL THÔNG BÁO ĐẶT HÀNG THÀNH CÔNG -->
+  <div id="success-modal" class="modal">
+    <div class="modal-card">
+      <i class="fa-solid fa-circle-check modal-icon"></i>
+      <h3>Đặt Hàng Thành Công!</h3>
+      <p>Cảm ơn bạn đã ủng hộ <strong>Tạp Hóa Online</strong>. Mã đơn hàng của bạn là <span id="order-id" class="order-code">#1001</span>.</p>
+      <button onclick="closeModal()" class="btn-close-modal">Tiếp tục mua hàng</button>
+    </div>
+  </div>
+  <!-- FOOTER DÙNG CHUNG -->
+  <footer class="site-footer">
+    <p>© 2026 Nhóm 03 - Môn Lập Trình Web - Đề tài Website Tạp Hóa Online</p>
+  </footer>
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

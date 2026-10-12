@@ -1,0 +1,52 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+    body { background-color: #f1f5f9; color: #334155; }
+    
+    /* LAYOUT ADMIN GRID */
+    .admin-container { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+    
+    /* SIDEBAR */
+    .sidebar { background: #1e293b; color: white; padding: 20px 0; }
+    .brand { font-size: 18px; font-weight: bold; text-align: center; padding-bottom: 20px; border-bottom: 1px solid #334155; color: #4ade80; }
+    .menu { list-style: none; margin-top: 20px; }
+    .menu li a { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: #94a3b8; text-decoration: none; font-size: 14px; }
+    .menu li.active a, .menu li a:hover { background: #334155; color: white; border-left: 4px solid #4ade80; }
+
+    /* MAIN CONTENT AREA */
+    .main-content { padding: 25px; }
+    .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+    
+    /* STATS CARDS */
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 25px; }
+    .card { background: white; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+    .card-title { font-size: 13px; color: #64748b; }
+    .card-value { font-size: 22px; font-weight: bold; margin-top: 5px; color: #0f172a; }
+
+    /* DATA TABLE */
+    .table-card { background: white; border-radius: 8px; border: 1px solid #e2e8f0; padding: 20px; }
+    .table-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .btn-add { background: #16a34a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+    .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; text-align: left; }
+    .admin-table th, .admin-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; }
+    .admin-table th { background: #f8fafc; color: #475569; }
+    
+    /* STATUS BADGES & BUTTONS */
+    .badge { padding: 4px 8px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+    .badge-paid { background: #dcfce7; color: #15803d; }
+    .badge-pending { background: #fef9c3; color: #a16207; }
+    .btn-action { border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; color: white; font-size: 12px; }
+    .btn-edit { background: #f59e0b; }
+    .btn-delete { background: #ef4444; }
+
+    /* MODAL FORM */
+    .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15,23,42,.58); align-items: center; justify-content: center; z-index: 10; }
+    .modal-overlay.is-open { display: flex; }
+    .modal-box { background: #fff; width: min(520px, 92%); border-radius: 10px; padding: 24px; box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+    .modal-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+    .modal-header h3 { margin:0; }
+    .modal-close { border:0; background:transparent; font-size:24px; cursor:pointer; color:#64748b; }
+    .admin-form { display:grid; gap:12px; }
+    .admin-form label { display:grid; gap:5px; font-size:13px; font-weight:600; }
+    .admin-form input, .admin-form select, .admin-form textarea { width:100%; padding:10px; border:1px solid #cbd5e1; border-radius:5px; font:inherit; }
+    .admin-form textarea { min-height:80px; resize:vertical; }
+    .form-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:8px; }
+    .btn-secondary { background:#e2e8f0; color:#334155; border:0; padding:8px 16px; border-radius:6px; cursor:pointer; }

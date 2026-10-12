@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạp Hóa Online - Danh Sách Sản Phẩm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style-sanpham.css">
+  
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-flex">
+        <span><i class="fa-solid fa-phone"></i> Hotline: 1900 6868</span>
+        <span>Hệ thống Cửa Hàng Tạp Hóa Online</span>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container header-flex">
+        <a href="../index.html" class="logo">
+          <div class="logo-icon-wrap"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="logo-text">
+            <h2>Tạp Hóa Online</h2>
+            <span>Tiện lợi - Tươi ngon mỗi ngày</span>
+          </div>
+        </a>
+        <div class="search-box">
+          <form><input type="text" placeholder="Tìm kiếm sản phẩm..."><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></form>
+        </div>
+        <div class="header-actions">
+          <a href="login.html" class="action-item"><i class="fa-regular fa-user action-icon"></i> <span>Tài khoản</span></a>
+          <a href="cart.html" class="action-item"><i class="fa-solid fa-basket-shopping action-icon"></i> <span>Giỏ hàng (0)</span></a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="nav-menu">
+          <li><a href="../index.html">Trang chủ</a></li>
+          <li class="active"><a href="products.html">Sản phẩm</a></li>
+          <li><a href="#">Khuyến mãi</a></li>
+          <li><a href="cart.html">Giỏ hàng & Thanh toán</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- BODY CONTENT -->
+  <main class="container page-layout">
+    <!-- SIDEBAR DANH MỤC -->
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3 class="box-title"><i class="fa-solid fa-list"></i> Danh Mục Hàng Hóa</h3>
+        <ul class="cat-list">
+          <li><a href="#">Rau củ quả tươi</a></li>
+          <li><a href="#">Gia vị & Dầu ăn</a></li>
+          <li><a href="#">Mì gói, Bún miến</a></li>
+          <li><a href="#">Đồ uống & Giải khát</a></li>
+          <li><a href="#">Hóa mỹ phẩm</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- KHU VỰC DANH SÁCH SẢN PHẨM -->
+    <section class="content-area">
+      <h2 class="section-title"><i class="fa-solid fa-boxes-stacked"></i> Danh Sách Sản Phẩm</h2>
+
+      <div class="product-grid">
+        <div class="product-item">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.11yx2ezC2SP0j5zXfY_RLQHaEx?r=0&pid=Api&h=220&P=0" alt="Rau củ quả tươi">
+          <h3>Rau củ quả tươi</h3>
+          <p class="price-current">5.000 - 25.000đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i> Chọn mua</button>
+        </div>
+
+        <div class="product-item">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.mIscyrAHSjJz8DETyaL90gHaHa?r=0&pid=Api&h=220&P=0" alt="Gia vị & Dầu ăn">
+          <h3>Gia vị & Dầu ăn</h3>
+          <p class="price-current">15.000 - 45.000đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i> Chọn mua</button>
+        </div>
+
+        <div class="product-item">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.DqUnO9LZ4k-xECZbINEuDAHaHa?r=0&pid=Api&h=220&P=0" alt="Mì gói, Bún miến">
+          <h3>Mì gói, Bún miến</h3>
+          <p class="price-current">5.000 - 30.000đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i> Chọn mua</button>
+        </div>
+
+        <div class="product-item">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.k2a-Onfct1rnHSp9LUwWaAHaE8?r=0&pid=Api&h=220&P=0" alt="Đồ uống & Giải khát">
+          <h3>Đồ uống & Giải khát</h3>
+          <p class="price-current">15.000 - 30.000đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i> Chọn mua</button>
+        </div>
+
+        <div class="product-item">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.MWhOqbRhBHHZcP2S1SlOTQHaFD?r=0&pid=Api&h=220&P=0" alt="Hóa mỹ phẩm">
+          <h3>Hóa mỹ phẩm</h3>
+          <p class="price-current">50.000 - 150.000đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i> Chọn mua</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 Nhóm 03 - Môn Lập Trình Web - Đề tài Website Tạp Hóa Online</p>
+  </footer>
+
+</body>
+</html>

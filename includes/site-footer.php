@@ -1,0 +1,1 @@
+<footer class="site-footer"><p>© 2026 Nhóm 03 - Môn Thiết Kế Web - Website Tạp Hóa Online</p></footer><script>document.querySelectorAll('form[action*="order.php"]').forEach(function(form){form.addEventListener('submit',function(event){if(!confirm('Bạn có chắc muốn xác nhận đặt hàng không?'))event.preventDefault();});});</script>

@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạp Hóa Online - Layout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style-index.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-flex">
+        <span><i class="fa-solid fa-phone"></i> Hotline: 1900 6868</span>
+        <span>Hệ thống Cửa Hàng Tạp Hóa Online</span>
+      </div>
+    </div>
+    <div class="main-header">
+      <div class="container header-flex">
+        <a href="index.html" class="logo">
+          <div class="logo-icon-wrap"><i class="fa-solid fa-cart-shopping"></i></div>
+          <div class="logo-text">
+            <h2>Tạp Hóa Online</h2>
+            <span>Tiện lợi - Tươi ngon mỗi ngày</span>
+          </div>
+        </a>
+        <div class="search-box">
+          <form><input type="text" placeholder="Tìm kiếm sản phẩm..."><button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button></form>
+        </div>
+        <div class="header-actions">
+          <a href="pages/login.html" class="action-item"><i class="fa-regular fa-user action-icon"></i> <span>Tài khoản</span></a>
+          <a href="pages/cart.html" class="action-item"><i class="fa-solid fa-basket-shopping action-icon"></i> <span>Giỏ hàng (0)</span></a>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container">
+        <ul class="nav-menu">
+          <li class="active"><a href="index.html">Trang chủ</a></li>
+          <li><a href="pages/sanpham.html">Sản phẩm</a></li>
+          <li><a href="#">Khuyến mãi</a></li>
+          <li><a href="pages/cart.html">Giỏ hàng & Thanh toán</a></li>
+          <li><a href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container page-layout">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <h3 class="box-title"><i class="fa-solid fa-list"></i> Danh Mục Hàng Hóa</h3>
+        <ul class="cat-list">
+          <li><a href="#">Rau củ quả tươi</a></li>
+          <li><a href="#">Gia vị & Dầu ăn</a></li>
+          <li><a href="#">Mì gói, Bún miến</a></li>
+          <li><a href="#">Đồ uống & Giải khát</a></li>
+          <li><a href="#">Hóa mỹ phẩm</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <section class="content-area">
+      <div class="main-banner">
+        <h2>Tạp Hóa Gần Bạn - Giao Hàng Siêu Tốc</h2>
+        <p>Thực phẩm tươi sạch mỗi ngày, giá cả bình ổn.</p>
+      </div>
+      <h3>Sản phẩm nổi bật </h3>
+      <div class="product-grid-demo">
+        <div class="product-item">
+          <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=300&q=80" alt="Cà chua">
+          <h4>Cà chua sạch (500g)</h4>
+          <p class="price-current">16.000 đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i>Chọn mua</button>
+        </div>
+        <div class="product-item">
+          <img src="https://hoptacxathanhbinh.com/wp-content/uploads/2023/08/1-3.jpg" alt="Chuối già Nam Mỹ"/>
+          <h4>Chuối già Nam Mỹ (1kg)</h4>
+          <p class="price-current">28.000 đ</p>
+          <button class="btn-add"><i class="fa-solid fa-cart-plus"></i>Chọn mua</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Nhóm 03 - Môn Lập Trình Web - Đề tài Website Tạp Hóa Online</p>
+  </footer>
+
+</body>
+</html>

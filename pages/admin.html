@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Tạp Hóa Online</title>
+  <meta http-equiv="refresh" content="0; url=../admin/index.php">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/style-admin.css">
+
+</head>
+<body>
+
+  <div class="admin-container">
+    <!-- SIDEBAR DÀNH CHO ADMIN -->
+    <aside class="sidebar">
+      <div class="brand"><i class="fa-solid fa-user-shield"></i> ADMIN PANEL</div>
+      <ul class="menu">
+        <li class="active"><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+        <li><a href="#"><i class="fa-solid fa-box"></i> Quản lý sản phẩm</a></li>
+        <li><a href="#"><i class="fa-solid fa-receipt"></i> Quản lý đơn hàng</a></li>
+        <li><a href="#"><i class="fa-solid fa-users"></i> Quản lý người dùng</a></li>
+        <li><a href="#"><i class="fa-solid fa-list"></i> Danh mục sản phẩm</a></li>
+        <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Báo cáo doanh thu</a></li>
+      </ul>
+    </aside>
+
+    <!-- KHU VỰC NỘI DUNG HIỂN THỊ CHÍNH -->
+    <main class="main-content">
+      <div class="top-header">
+        <h2>Dashboard / Tổng quan</h2>
+        <div><span>Xin chào, <strong>Admin</strong></span></div>
+      </div>
+
+      <!-- 1. CÁC THẺ THỐNG KÊ CHI SỐ (CARDS) -->
+      <div class="stats-grid">
+        <div class="card"><div class="card-title">Người dùng</div><div class="card-value">1,250</div></div>
+        <div class="card"><div class="card-title">Đơn hàng mới</div><div class="card-value">350</div></div>
+        <div class="card"><div class="card-title">Sản phẩm</div><div class="card-value">520</div></div>
+        <div class="card"><div class="card-title">Doanh thu tháng</div><div class="card-value">120.000.000đ</div></div>
+      </div>
+
+      <!-- 2. BẢNG DỮ LIỆU QUẢN LÝ CRUD & ĐƠN HÀNG -->
+      <div class="table-card">
+        <div class="table-header">
+          <h3>Quản lý đơn hàng mới</h3>
+          <button class="btn-add"><i class="fa-solid fa-plus"></i> Tạo đơn hàng mới</button>
+        </div>
+
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Mã đơn</th>
+              <th>Khách hàng</th>
+              <th>Ngày đặt</th>
+              <th>Tổng tiền</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>#DH001</strong></td>
+              <td>Tên khách hàng 1</td>
+              <td>10/09/2026</td>
+              <td>500.000đ</td>
+              <td><span class="badge badge-paid">Đã thanh toán</span></td>
+              <td>
+                <button class="btn-action btn-edit"><i class="fa-solid fa-pen"></i> Sửa</button>
+                <button class="btn-action btn-delete"><i class="fa-solid fa-trash"></i> Xóa</button>
+              </td>
+            </tr>
+            <tr>
+              <td><strong>#DH002</strong></td>
+              <td>Tên khách hàng 2</td>
+              <td>11/09/2026</td>
+              <td>250.000đ</td>
+              <td><span class="badge badge-pending">Chờ xử lý</span></td>
+              <td>
+                <button class="btn-action btn-edit"><i class="fa-solid fa-pen"></i> Sửa</button>
+                <button class="btn-action btn-delete"><i class="fa-solid fa-trash"></i> Xóa</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
